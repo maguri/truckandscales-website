@@ -3,23 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://something-fresh.org/agb/</loc>
+    <loc>https://www.truckandscales.com/agb/</loc>
   </url>
   
   <url>
-    <loc>http://something-fresh.org/blog/</loc>
+    <loc>https://www.truckandscales.com/blog/</loc>
   </url>
   
   <url>
-    <loc>http://something-fresh.org/blog/first/</loc>
+    <loc>https://www.truckandscales.com/blog/first/</loc>
   </url>
   
   <url>
-    <loc>http://something-fresh.org/</loc>
+    <loc>https://www.truckandscales.com/blog/second/</loc>
   </url>
   
   <url>
-    <loc>http://something-fresh.org/blog/second/</loc>
+    <loc>https://www.truckandscales.com/</loc>
   </url>
   
 </urlset>
