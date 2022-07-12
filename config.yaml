@@ -1,0 +1,204 @@
+baseURL: http://something-fresh.org/
+languageCode: en-us
+title: Hugo Fresh Theme
+theme: hugo-fresh
+googleAnalytics: # Put in your tracking code without quotes like this: UA-XXXXXX...
+# Disables warnings
+disableKinds:
+- taxonomy
+- taxonomyTerm
+markup:
+  goldmark:
+    renderer:
+      unsafe: true # Allows you to write raw html in your md files
+
+params:
+  # Open graph allows easy social sharing. If you don't want it you can set it to false or just delete the variable
+  openGraph: true
+  # Used as meta data; describe your site to make Google Bots happy
+  description:
+  navbarlogo:
+  # Logo (from static/images/logos/___)
+    image: logos/fresh.svg
+    link: /
+  font:
+    name: "Open Sans"
+    sizes: [400,600]
+  hero:
+    # Main hero title
+    title: Truck & Scales
+    # Hero subtitle (optional)
+    subtitle: Digitalizando el futuro de la logística y el transporte
+    # Button text
+    buttontext: Únete al cambio
+    # Where the main hero button links to
+    buttonlink: "#"
+    # Hero image (from static/images/___)
+    image: illustrations/main.png
+    # Footer logos (from static/images/logos/clients/___.svg)
+    clientlogos:
+    - systek
+    - tribe
+    - kromo
+    - infinite
+    - gutwork
+  # Customizable navbar. For a dropdown, add a "sublinks" list.
+  navbar:
+  - title: Features
+    url: /
+  - title: Tarifas
+    url: /
+  # - title: Dropdown
+  #   sublinks:
+  #   - title: Dropdown item
+  #     url: /
+  #   - title: Dropdown item
+  #     url: /
+  #   - title: Dropdown item
+  #     url: /
+  - title: Log in
+    url: /
+  - title: Sign up
+    url: /
+    button: true
+  sidebar:
+    # Logo (from /images/logos/___.svg)
+    logo: fresh-square
+    sections:
+    - title: User
+      icon: user
+      links:
+      - text: Profile
+        url: /
+      - text: Account
+        url: /
+      - text: Settings
+        url: /
+    - title: Messages
+      icon: envelope
+      links:
+      - text: Inbox
+        url: /
+      - text: Compose
+        url: /
+    - title: Images
+      icon: image
+      links:
+      - text: Library
+        url: /
+      - text: Upload
+        url: /
+    - title: Settings
+      icon: cog
+      links:
+      - text: User settings
+        url: /
+      - text: App settings
+        url: /
+  section1:
+    title: Conectados y Juntos
+    subtitle: llegamos más legos y mejor
+    tiles:
+    - title: App builder
+      icon: mouse-globe
+      text: La plataforma distribuida para empresas
+      url: /
+      buttonText: Conecta
+    - title: Cloud integration
+      icon: laptop-cloud
+      text: Todo lo que necesites saber a un solo click
+      url: /
+      buttonText: Empieza
+    - title: Add-ons & plugins
+      icon: plug-cloud
+      text: Conecta su infrastructura a la plataforma
+      url: /
+      buttonText: Solicitar
+  section2:
+    title: Automatizamos la entrega de Documentación
+    subtitle: Sistema para el Transporte y la Lógistica
+    features:
+    - title: Seguridad
+      text: Sin infraestructura adicional y acceso a Internet, la empresa Emisora emite su documentación de forma encriptada a un sistema descentralizado.
+      # Icon (from /images/illustrations/icons/___.svg)
+      icon: laptop-globe
+    - title: Documentación Digital
+      text: Las empresas propietarias de cada Documento tienen acceso en tiempo real a dicha documentación para anticiparse a la llegada de la mercancía a su destino
+      icon: doc-sync
+    - title: Accesibilidad y Sincronización
+      text: Tanto clientes como transportistas tendrán acceso a la información y estar comunicados y sincronizados para el control del transporte.
+      icon: mobile-feed
+  section3:
+    title: Una platforma
+    subtitle: Para la gestión documental
+    image: illustrations/mockups/app-mockup.png
+    buttonText: Contacta
+    buttonLink: "https://www.robitec.es/#contact"
+  # section4:
+  #   title: Nuestrlove us!
+  #   subtitle: Lorem ipsum sit dolor amet is a dummy text used by typography industry
+    # clients:
+    # - name: Irma Walters
+    #   quote: Lorem ipsum dolor sit amet, elit deleniti dissentias quo eu, hinc minim appetere te usu, ea case duis scribentur has. Duo te consequat elaboraret, has quando suavitate at.
+    #   job: Accountant
+    #   img: 1
+    # - name: John Bradley
+    #   quote: Lorem ipsum dolor sit amet, elit deleniti dissentias quo eu, hinc minim appetere te usu, ea case duis scribentur has. Duo te consequat elaboraret, has quando suavitate at.
+    #   job: Financial Analyst
+    #   img: 2
+    # - name: Gary Blackman
+    #   quote: Lorem ipsum dolor sit amet, elit deleniti dissentias quo eu, hinc minim appetere te usu, ea case duis scribentur has. Duo te consequat elaboraret, has quando suavitate at.
+    #   job: HR Manager
+    #   img: 3
+  section5: true
+  footer:
+    # Logo (from /images/logos/___)
+    logo: fresh-white-alt.svg
+    # Social Media Title
+    socialmediatitle: Nosotros
+    # Social media links (GitHub, Twitter, etc.). All are optional.
+    socialmedia:
+    - link: https://github.com/robitec
+      # Icons are from Font Awesome
+      icon: github
+    - link: https://dribbble.com/#
+      icon: dribbble
+    - link: https://facebook.com/#
+      icon: facebook
+    - link: https://twitter.com/oriolmauriguiu
+      icon: twitter
+    - link: https://www.linkedin.com/company/robitec-industry-solutions/
+      icon: linkedin
+    bulmalogo: true
+    quicklinks:
+      column1:
+        title: "Product"
+        links:
+        - text: Discover features
+          link: /
+        - text: Why choose our product?
+          link: /
+        - text: Compare features
+          link: /
+        - text: Our roadmap
+          link: /
+        - text: AGB
+          link: /agb
+      column2:
+        title: "Docs"
+        links:
+        - text: Get started
+          link: /
+        - text: User guides
+          link: /
+        - text: Admin guide
+          link: /
+        - text: Developers
+          link: /
+      column3:
+        title: "Blog"
+        links:
+        - text: Latest news
+          link: /blog/first
+        - text: Tech articles
+          link: /blog/second
