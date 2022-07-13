@@ -77,12 +77,12 @@ params:
     - title: Messages
       icon: envelope
       links:
-      - text: Inbox
+      - text: Notification
         url: /
       - text: Compose
         url: /
-    - title: Images
-      icon: image
+    - title: Transaccions
+      icon: file
       links:
       - text: Library
         url: /
@@ -104,15 +104,15 @@ params:
       text: La plataforma distribuida para empresas
       url: /
       buttonText: Conecta
-    - title: Cloud integration
+    - title: Software integration
       icon: laptop-cloud
-      text: Todo lo que necesites saber a un solo click
-      url: /
-      buttonText: Empieza
-    - title: Add-ons & plugins
+      text: Conecta su infrastructura a la Plataforma
+      url: "https://www.robitec.es/#contact"
+      buttonText: Integrar
+    - title: Sistemas Automáticos
       icon: plug-cloud
-      text: Conecta su infrastructura a la plataforma
-      url: /
+      text: Actualice su infrastructura para conectarte
+      url: "https://www.bmauri.com/#contact"
       buttonText: Solicitar
   section2:
     title: Automatizamos la entrega de Documentación
@@ -129,10 +129,10 @@ params:
       text: Tanto clientes como transportistas tendrán acceso a la información y estar comunicados y sincronizados para el control del transporte.
       icon: mobile-feed
   section3:
-    title: Una platforma
-    subtitle: Para la gestión documental
+    title: Plataforma de Datos
+    subtitle: para la gestión documental
     image: illustrations/mockups/app-mockup.png
-    buttonText: Contacta
+    buttonText: Integrar
     buttonLink: "https://www.robitec.es/#contact"
   # section4:
   #   title: Nuestrlove us!
