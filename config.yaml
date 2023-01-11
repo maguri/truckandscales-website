@@ -19,7 +19,7 @@ params:
   description:
   navbarlogo:
   # Logo (from static/images/logos/___)
-    image: logos/fresh.svg
+    image: logos/truckandscales.png
     link: /
   font:
     name: "Open Sans"
@@ -44,10 +44,10 @@ params:
     - gutwork
   # Customizable navbar. For a dropdown, add a "sublinks" list.
   navbar:
-  - title: Features
-    url: /
+  # - title: Features
+  #   url: /
   - title: Tarifas
-    url: /
+    url: https://www.dastions.com#pricing
   # - title: Dropdown
   #   sublinks:
   #   - title: Dropdown item
@@ -56,14 +56,14 @@ params:
   #     url: /
   #   - title: Dropdown item
   #     url: /
-  - title: Log in
-    url: /
-  - title: Sign up
-    url: /
+  - title: App
+    url: https://app.truckandscales.com
+  - title: Solicitar Demo
+    url: https://www.dastions.com#contact
     button: true
   sidebar:
     # Logo (from /images/logos/___.svg)
-    logo: fresh-square
+    logo: favicon-white.png
     sections:
     - title: User
       icon: user
@@ -107,12 +107,12 @@ params:
     - title: Software integration
       icon: laptop-cloud
       text: Conecta su infrastructura a la Plataforma
-      url: "https://www.robitec.es/#contact"
-      buttonText: Integrar
+      url: "https://www.dastions.com/#contact"
+      buttonText: Integrar en mi Empresa
     - title: Sistemas Automáticos
       icon: plug-cloud
       text: Actualice su infrastructura para conectarte
-      url: "https://www.bmauri.com/contact"
+      url: "https://www.robitec.es#contact"
       buttonText: Solicitar
   section2:
     title: Automatizamos la entrega de Documentación
@@ -132,8 +132,8 @@ params:
     title: Plataforma de Datos
     subtitle: para la gestión documental
     image: illustrations/mockups/app-mockup.png
-    buttonText: Integrar
-    buttonLink: "https://www.robitec.es/#contact"
+    buttonText: Integrar en mi Empresa
+    buttonLink: "https://www.dastions.com/#contact"
   # section4:
   #   title: Nuestrlove us!
   #   subtitle: Lorem ipsum sit dolor amet is a dummy text used by typography industry
@@ -153,7 +153,7 @@ params:
   section5: true
   footer:
     # Logo (from /images/logos/___)
-    logo: fresh-white-alt.svg
+    logo: favicon-white.png
     # Social Media Title
     socialmediatitle: Nosotros
     # Social media links (GitHub, Twitter, etc.). All are optional.
@@ -169,26 +169,26 @@ params:
       icon: twitter
     - link: https://www.linkedin.com/company/robitec-industry-solutions/
       icon: linkedin
-    bulmalogo: true
+    bulmalogo: false
     quicklinks:
       column1:
-        title: "Product"
+        title: "Servicios"
         links:
-        - text: Discover features
+        - text: Documentación Online
           link: /
-        - text: Why choose our product?
+        - text: Gestión de Usuarios
           link: /
-        - text: Compare features
+        - text: Trazabilidad en Tiempo Real
           link: /
-        - text: Our roadmap
+        - text: Control de Expediciones
           link: /
-        - text: AGB
-          link: /agb
+        - text: Control de Accesos
+          link: /
       column2:
         title: "Docs"
         links:
-        - text: Get started
-          link: /
+        - text: Terms & Conditions
+          link: /agb
         - text: User guides
           link: /
         - text: Admin guide

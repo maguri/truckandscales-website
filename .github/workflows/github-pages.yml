@@ -23,12 +23,6 @@ jobs:
           hugo-version: 'latest'
           # extended: true
 
-      - name: Add Theme
-        run: |
-          ls -la
-          mkdir themes
-          git clone --depth 1 https://github.com/maguri/$THEME.git themes/$THEME/
-
       - name: Build Website
         run: |
           ls -la
