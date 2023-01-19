@@ -1,5 +1,5 @@
 ---
-title: Terminos y Condiciones
+title: Condiciones de Contrato
 include_footer: true
 ---
 
