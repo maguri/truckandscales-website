@@ -7,6 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://www.truckandscales.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Condiciones de Contrato</title>
+      <link>https://www.truckandscales.com/billing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truckandscales.com/billing/</guid>
+      <description>Condiciones de Contrato de Licencia El cliente que contrata los servicios de Software por mediante de una Tarifa Mensual recurrente, tiene derecho a un seguido de ventajas que tienen la finalidad de garantizar a dicho cliente la seguridad de tener un software actualizado a medida y con un soporte de asistencia directo y eficaz. Dichas condiciones son adaptadas a la Licencia y Software contratado.
+ Trazabilidad y modificaciones relacionadas a errores de Programática.</description>
+    </item>
+    
+    <item>
+      <title>Condiciones De Servicio</title>
+      <link>https://www.truckandscales.com/terms/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truckandscales.com/terms/</guid>
+      <description>1. Acuerdo entre el usuario y Dastions Bienvenido a Truck &amp;amp; Scales. Estos Términos de uso (los &amp;ldquo;Términos&amp;rdquo;) son un contrato legalmente vinculante entre usted y Digital Application Solutions S.L.(&amp;ldquo;Dastions&amp;rdquo;). la Plataforma web de truckandscales.com y productos de Dastions (nuestros &amp;ldquo;Servicios&amp;rdquo;) se componen de varias páginas web operadas por Dastions. Este contrato establece sus derechos y responsabilidades cuando utiliza nuestros servicios. Se le ofrece el uso de cualquiera de nuestros Servicios (incluida la simple navegación en uno de nuestros sitios web) con la condición de que acepte sin modificación los términos, condiciones y avisos contenidos en este documento.</description>
+    </item>
+    
+    <item>
       <title>First</title>
       <link>https://www.truckandscales.com/blog/first/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -16,22 +35,21 @@
     </item>
     
     <item>
+      <title>Política De Privacidad</title>
+      <link>https://www.truckandscales.com/privacity/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truckandscales.com/privacity/</guid>
+      <description>Proteger su información privada es nuestra prioridad. Esta Declaración de privacidad se aplica a Truck &amp;amp; Scales bajo el dominio truckandscales.com y productos de Dastions, y rige la recopilación y el uso de datos. La Plataforma web de *.truckandscales.com y otros servicios (los &amp;ldquo;Servicios&amp;rdquo;) proporcionados por Digital Application Solutions S.L. son un servicio que acepta envíos de formularios y envía correos electrónicos. Necesitamos procesar su información personal para administrar nuestro negocio y brindarle los Servicios.</description>
+    </item>
+    
+    <item>
       <title>Second</title>
       <link>https://www.truckandscales.com/blog/second/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.truckandscales.com/blog/second/</guid>
       <description>My awesome blogpost My super sweet second blog post</description>
-    </item>
-    
-    <item>
-      <title>Terminos y Condiciones</title>
-      <link>https://www.truckandscales.com/agb/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.truckandscales.com/agb/</guid>
-      <description>Condiciones de Contrato de Licencia El cliente que contrata los servicios de Software por mediante de una Tarifa Mensual recurrente, tiene derecho a un seguido de ventajas que tienen la finalidad de garantizar a dicho cliente la seguridad de tener un software actualizado a medida y con un soporte de asistencia directo y eficaz. Dichas condiciones son adaptadas a la Licencia y Software contratado.
- Trazabilidad y modificaciones relacionadas a errores de Programática.</description>
     </item>
     
   </channel>
