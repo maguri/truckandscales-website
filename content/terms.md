@@ -5,11 +5,11 @@ include_footer: true
 
 ### 1. Acuerdo entre el usuario y Dastions
 
-Bienvenido a *Truck & Scales*. Estos Términos de uso (los *"Términos"*) son un contrato legalmente vinculante entre usted y **Digital Application Solutions S.L.**(*"Dastions"*). la Plataforma web de [truckandscales.com](https://www.truckandscales.com) y productos de [**Dastions**](https://www.dastions.com) (nuestros *"Servicios"*) se componen de varias páginas web operadas por **Dastions**. Este contrato establece sus derechos y responsabilidades cuando utiliza nuestros servicios. Se le ofrece el uso de cualquiera de nuestros Servicios (incluida la simple navegación en uno de nuestros sitios web) con la condición de que acepte sin modificación los términos, condiciones y avisos contenidos en este documento. Su uso de *Truck & Scales* constituye su aceptación de todos esos Términos. Si no está de acuerdo con los Términos, no puede usar nuestros Servicios. Lea atentamente estos términos y conserve una copia para su referencia.
+Bienvenido a *Truck & Scales*. Estos Términos de uso (los *"Términos"*) son un contrato legalmente vinculante entre usted y **Digital Application Solutions S.L.**(*"Dastions"*). La Plataforma [Truck & Scales](https://www.truckandscales.com) y productos de [**Dastions**](https://www.dastions.com) (nuestros *"Servicios"*) se componen de varias aplicaciones de software operadas por la empresa **Dastions**. Este contrato establece sus derechos y responsabilidades cuando utiliza nuestros servicios. Se le ofrece el uso de cualquiera de nuestros Servicios (incluida la simple navegación en uno de nuestros sitios web) con la condición de que acepte sin modificación los términos, condiciones y avisos contenidos en este documento. Su uso de dichas aplicaciones propiedad de **Dastions** constituye su aceptación de todos esos Términos. Si no está de acuerdo con los Términos, no puede usar nuestros Servicios. Lea atentamente estos términos y conserve una copia para su referencia.
 
 Tenga en cuenta que la *Sección 11*. Disputas con **Dastions** contiene una cláusula de arbitraje y una renuncia a demanda colectiva. Al aceptar los Términos, acepta resolver todas las disputas a través de un arbitraje individual vinculante, lo que significa que renuncia a cualquier derecho a que un juez o jurado decida esas disputas, y que renuncia a su derecho a participar en demandas colectivas, arbitrajes colectivos o acciones representativas.
 
-*Truck & Scales* es un servicio que genera, acepta, recibe, almacena y procesa envío de datos y documentos vinculados al transporte y la logística.
+*Truck & Scales* es un servicio que gestiona, genera, recibe, almacena y procesa datos y documentos vinculados al transporte y la logística de camiones u otros. La versión *Cloud* envía dichos datos y documentos a través de Internet con el fin de cumplir con el objetivo del servicio.
 
 ### 2. Privacidad
 
@@ -136,6 +136,6 @@ A menos que se especifique lo contrario en el presente, este acuerdo constituye 
 
 ### 18. Contáctenos
 
-*Para cualquier duda pude contactar en las oficinas centrales de la empresa. <a href="https://www.dastions.com#contact" target="_blank">Dastions Contact.</a>*
+*Para cualquier duda pude contactar directamente con nuestro servicio de atención al cliente. <a href="https://www.dastions.com#contact" target="_blank">Dastions Contact.</a>*
 
-Última actualización: 19 de enero de 2023
+Última actualización: 20 de enero de 2023
