@@ -23,9 +23,17 @@
         </p>
       </div>
       <div class="column is-5 is-offset-1">
-        <figure class="image is-4by3">
-          <img src="{{ printf "/images/%s" $image | relURL }}" alt="Description">
-        </figure>
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/KLKXPXEdsbk?autoplay=1&mute=1&rel=0"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <!-- <figure class="image is-4by3"> -->
+          <!-- <img src="{{ printf "/images/%s" $image | relURL }}" alt="Description"> -->
+        <!-- </figure> -->
       </div>
     </div>
   </div>
