@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solicitar presupuesto de báscula de camiones | Contacto | Truck & Scales</title>
+<meta name="description" content="Solicita presupuesto del software para camiones Truck & Scales o de tu báscula de camiones: nueva o modernización, de hormigón, metálica o a medida. Cuéntanos tu instalación y te asesoramos sin compromiso. Teléfono, correo y WhatsApp.">
+<meta name="theme-color" content="#0f2436">
+<link rel="icon" type="image/png" href="favicon.png?v=5">
+<link rel="canonical" href="https://www.dastions.com/basculas/contacto">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Solicitar presupuesto | Básculas de camiones | Truck & Scales">
+<meta property="og:description" content="Cuéntanos tu instalación y te preparamos una propuesta a medida.">
+<meta property="og:locale" content="es_ES">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500;600;700;800;900&family=Public+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="index.html" class="brand" aria-label="Truck & Scales - Inicio"><img decoding="async" src="img/truck-and-scales-logo.png" alt="Truck & Scales" class="brand__logo"></a>
+    <nav class="nav__links" aria-label="Principal">
+      <a href="index.html">Inicio</a>
+      <div class="navitem navitem--drop">
+        <button class="navitem__top" type="button" data-href="software.html" aria-haspopup="true" aria-expanded="false">Software <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="navdrop">
+          <a href="software.html">El software</a>
+          <a href="automatizacion.html">Automatización</a>
+        </div>
+      </div>
+      <a href="tarifas.html">Tarifas</a>
+      <div class="navitem navitem--drop">
+        <button class="navitem__top" type="button" aria-haspopup="true" aria-expanded="false">Productos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="navdrop">
+          <a href="totems.html#con-impresora">Tótem con impresora</a>
+          <a href="totems.html#sin-impresora">100% digital (sin tótem)</a>
+          <a href="totems.html#con-pantalla">Tótem con pantalla</a>
+          <a href="totems.html#monedero">Monedero</a>
+          <a href="totems.html#control-accesos">Control de accesos y matrículas</a>
+        </div>
+      </div>
+      <a href="partners.html">Partners</a>
+      <a href="contacto.html" class="active">Contacto</a>
+      <a href="contacto.html" class="btn btn--primary nav__cta" data-erp-contact>Presupuesto <span class="arrow">→</span></a>
+    </nav>
+    <button class="nav__toggle" aria-label="Menú" aria-expanded="false"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+  </div>
+</header>
+
+<section class="phero phero--clean">
+  <div class="phero__bg"><img src="img/fotos/bascula-b.jpg" alt="Báscula de camiones instalada"></div>
+  <div class="wrap phero__inner">
+    <span class="eyebrow eyebrow--light">Contacto</span>
+    <h1 class="h1">Solicita tu presupuesto</h1>
+    <p class="lead">Cuéntanos tu instalación y te preparamos una propuesta adaptada a tu operativa. Sin compromiso.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="split" style="align-items:start">
+
+      <!-- FORMULARIO -->
+      <div class="reveal" id="solicitar">
+        <div class="formcard">
+          <h2 class="h3" style="margin-bottom:1.4rem">Formulario de solicitud de presupuesto</h2>
+          <form id="presupuestoForm" method="POST" enctype="multipart/form-data" data-mailto="info@dastions.com">
+            <!-- Anti-spam (honeypot): rellenar este campo delata a los bots -->
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+
+            <div class="row2">
+              <div class="field"><label for="nombre">Nombre y apellidos *</label><input id="nombre" name="nombre" type="text" required autocomplete="name"></div>
+              <div class="field"><label for="empresa">Empresa</label><input id="empresa" name="empresa" type="text" autocomplete="organization"></div>
+            </div>
+
+            <div class="row2">
+              <div class="field"><label for="telefono">Teléfono *</label><input id="telefono" name="telefono" type="tel" required autocomplete="tel"></div>
+              <div class="field"><label for="email">Correo electrónico *</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+            </div>
+
+            <div class="row2">
+              <div class="field"><label for="ubicacion">Provincia o ubicación de la instalación</label><input id="ubicacion" name="ubicacion" type="text" autocomplete="address-level1"></div>
+              <div class="field"><label for="sector">Sector de actividad</label>
+                <select id="sector" name="sector">
+                  <option value="">Selecciona</option>
+                  <option>Áridos / canteras</option>
+                  <option>Hormigoneras</option>
+                  <option>Cooperativas agrícolas</option>
+                  <option>Fábricas de pienso</option>
+                  <option>Gestión de residuos</option>
+                  <option>Reciclaje</option>
+                  <option>Logística</option>
+                  <option>Puertos</option>
+                  <option>Industria alimentaria</option>
+                  <option>Industria química</option>
+                  <option>Construcción</option>
+                  <option>Minería</option>
+                  <option>Otro</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row2">
+              <div class="field"><label for="tipo">Tipo de báscula de interés</label>
+                <select id="tipo" name="tipo">
+                  <option value="">Selecciona</option>
+                  <option>De hormigón</option>
+                  <option>Metálica</option>
+                  <option>A medida</option>
+                  <option>No lo sé / asesoradme</option>
+                </select>
+              </div>
+              <div class="field"><label for="actuacion">Nueva o modernización</label>
+                <select id="actuacion" name="actuacion">
+                  <option value="">Selecciona</option>
+                  <option>Báscula nueva</option>
+                  <option>Modernización de una existente</option>
+                  <option>Servicio técnico / mantenimiento</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row2">
+              <div class="field"><label for="longitud">Longitud aproximada</label>
+                <select id="longitud" name="longitud">
+                  <option value="">Selecciona</option>
+                  <option>6 m</option><option>8 m</option><option>12 m</option><option>14 m</option>
+                  <option>16 m</option><option>18 m</option><option>20 m</option><option>22 m</option>
+                  <option>24 m</option><option>Otra / no lo sé</option>
+                </select>
+              </div>
+              <div class="field"><label for="capacidad">Capacidad necesaria</label>
+                <select id="capacidad" name="capacidad">
+                  <option value="">Selecciona</option>
+                  <option>45 t</option><option>60 t</option><option>80 t</option><option>Otra / no lo sé</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row2">
+              <div class="field"><label for="instalacion">Instalación</label>
+                <select id="instalacion" name="instalacion">
+                  <option value="">Selecciona</option>
+                  <option>Sobresuelo (apoyada)</option>
+                  <option>Empotrada (en foso)</option>
+                  <option>No lo sé / asesoradme</option>
+                </select>
+              </div>
+              <div class="field"><label for="automatizacion">Necesidad de automatización</label>
+                <select id="automatizacion" name="automatizacion">
+                  <option value="">Selecciona</option>
+                  <option>Sí, con automatización</option>
+                  <option>No, solo pesaje</option>
+                  <option>No lo sé / asesoradme</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field"><label for="comentarios">Comentarios</label><textarea id="comentarios" name="comentarios" rows="4" placeholder="Cuéntanos tu operativa, plazos, obra civil, vehículos especiales..."></textarea></div>
+
+            <p class="field" style="font-size:.86rem;color:var(--muted)">¿Tienes fotografías o planos? Adjúntalos en el correo que se abrirá al enviar la solicitud.</p>
+
+            <label class="check">
+              <input type="checkbox" required>
+              <span>He leído y acepto la <a href="legal.html#privacidad" style="color:var(--brand-dd);font-weight:600">política de privacidad</a> y el tratamiento de mis datos para responder a esta solicitud.</span>
+            </label>
+            <button type="submit" class="btn btn--primary" style="width:100%;justify-content:center">Enviar solicitud <span class="arrow">→</span></button>
+          </form>
+          <p style="font-size:.88rem;color:var(--muted);margin:1.2rem 0 0">¿Prefieres el correo? Escríbenos a <a href="mailto:info@dastions.com" style="color:var(--brand-dd);font-weight:600">info@dastions.com</a></p>
+        </div>
+      </div>
+
+      <!-- INFO -->
+      <div class="reveal d1">
+        <span class="eyebrow">Datos de contacto</span>
+        <h2 class="h2" style="margin:.6rem 0 1.4rem">Digital Application Solutions S.L.</h2>
+        <div class="card contactbox">
+        <div class="cinfo">
+          <a href="mailto:info@dastions.com">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+            <span><b>Email</b><span>info@dastions.com</span></span>
+          </a>
+          <a href="tel:+34977131206">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L7.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg></span>
+            <span><b>Teléfono</b><span>+34 977 13 12 06</span></span>
+          </a>
+          <a href="https://api.whatsapp.com/send?phone=34620717157" target="_blank" rel="noopener">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.1-5.3A8.5 8.5 0 1 1 21 11.5z"/></svg></span>
+            <span><b>WhatsApp</b><span>+34 620 717 157</span></span>
+          </a>
+          <div>
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <span><b>Ubicación</b><span>Tarragona, Cataluña, España</span></span>
+          </div>
+        </div>
+
+        <div class="contactbox__svc">
+          <h3 class="h3" style="margin-bottom:.6rem">Servicio completo</h3>
+          <ul class="checklist" style="margin-top:.6rem">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Asesoramiento y fabricación</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Instalación y automatización</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Calibración y mantenimiento</span></li>
+          </ul>
+        </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a href="index.html" class="brand"><img decoding="async" src="img/truck-and-scales-logo.png" alt="Truck & Scales" class="brand__logo"></a>
+        <p>Digital Application Solutions S.L. Software de gestión de pesada automática de camiones.</p>
+      </div>
+      <div><h4>Producto</h4><ul><li><a href="software.html">Software</a></li><li><a href="tarifas.html">Tarifas</a></li><li><a href="totems.html#con-impresora">Tótems</a></li><li><a href="automatizacion.html">Automatización</a></li></ul></div>
+      <div><h4>Empresa</h4><ul><li><a href="partners.html">Partners</a></li><li><a href="proyectos.html">Proyectos</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+      <div><h4>Contacto</h4><ul><li><a href="mailto:info@dastions.com">info@dastions.com</a></li><li><a href="tel:+34977131206">+34 977 13 12 06</a></li><li><a href="https://api.whatsapp.com/send?phone=34620717157" target="_blank" rel="noopener">WhatsApp</a></li><li>Tarragona, Cataluña, España</li></ul></div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Digital Application Solutions S.L. · Truck & Scales</span>
+      <span><a href="legal.html#aviso">Aviso legal</a> · <a href="legal.html#privacidad">Privacidad</a> · <a href="legal.html#cookies">Cookies</a></span>
+    </div>
+  </div>
+  <div class="footer__wm" aria-hidden="true">Scales</div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
