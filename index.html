@@ -1,23 +1,253 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Truck & Scales: software y automatización para básculas, documentación digital de transporte y trazabilidad. Por Dastions."
-    />
-    <title>Truck & Scales</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Software para camiones | Pesaje automático y albarán digital | Truck & Scales</title>
+<meta name="description" content="Truck & Scales es el software para camiones que gestiona el pesaje automático: captura el peso de la báscula, genera el albarán digital, controla los accesos y lo conecta con tu ERP. Compatible con la báscula de camiones que ya tienes.">
+<meta name="theme-color" content="#2e3a50">
+<link rel="icon" type="image/png" href="favicon.png?v=5">
+<link rel="canonical" href="https://www.dastions.com/basculas/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Software para camiones | Truck & Scales">
+<meta property="og:description" content="El software para camiones que automatiza el pesaje: peso, albarán digital, control de accesos e integración con tu ERP.">
+<meta property="og:locale" content="es_ES">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500;600;700;800;900&family=Public+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Truck & Scales","alternateName":"Software para camiones","applicationCategory":"BusinessApplication","operatingSystem":"Web","keywords":"software para camiones, software de pesaje de camiones, software para básculas de camiones, báscula de camiones, albarán digital","offers":{"@type":"Offer","price":"89","priceCurrency":"EUR"},"description":"Software para camiones: gestión del pesaje automático, albarán digital, control de accesos e integración con ERP.","publisher":{"@type":"Organization","name":"Digital Application Solutions S.L.","telephone":"+34977131206","address":{"@type":"PostalAddress","addressLocality":"Tarragona","addressCountry":"ES"}}}
+</script>
+</head>
+<body class="page-home">
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="index.html" class="brand" aria-label="Truck & Scales - Inicio"><img decoding="async" src="img/truck-and-scales-logo.png" alt="Truck & Scales" class="brand__logo"></a>
+    <nav class="nav__links" aria-label="Principal">
+      <a href="index.html" class="active">Inicio</a>
+      <div class="navitem navitem--drop">
+        <button class="navitem__top" type="button" data-href="software.html" aria-haspopup="true" aria-expanded="false">Software <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="navdrop">
+          <a href="software.html">El software</a>
+          <a href="automatizacion.html">Automatización</a>
+        </div>
+      </div>
+      <a href="tarifas.html">Tarifas</a>
+      <div class="navitem navitem--drop">
+        <button class="navitem__top" type="button" aria-haspopup="true" aria-expanded="false">Productos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="navdrop">
+          <a href="totems.html#con-impresora">Tótem con impresora</a>
+          <a href="totems.html#sin-impresora">100% digital (sin tótem)</a>
+          <a href="totems.html#con-pantalla">Tótem con pantalla</a>
+          <a href="totems.html#monedero">Monedero</a>
+          <a href="totems.html#control-accesos">Control de accesos y matrículas</a>
+        </div>
+      </div>
+      <a href="partners.html">Partners</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="contacto.html" class="btn btn--primary nav__cta" data-erp-contact>Presupuesto <span class="arrow">→</span></a>
+    </nav>
+    <button class="nav__toggle" aria-label="Menú" aria-expanded="false"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="phero">
+  <div class="phero__bg"><video class="phero__vid" autoplay muted loop playsinline preload="auto" poster="img/fotos/truck-b.jpg"><source src="img/fotos/truck-slide.mp4" type="video/mp4"></video></div>
+  <div class="wrap phero__inner">
+    <span class="eyebrow eyebrow--light">Software para camiones</span>
+    <h1 class="h1">Digitaliza y automatiza el pesaje de tus camiones</h1>
+    <p class="lead">Truck &amp; Scales captura el peso de la báscula, genera el albarán digital, controla los accesos y lo conecta con tu ERP. Todo automático y compatible con la báscula de camiones que ya tienes.</p>
+    <div class="hero__cta">
+      <a href="contacto.html" class="btn btn--primary" data-erp-contact>Solicitar una demo <span class="arrow">→</span></a>
+      <a href="tarifas.html" class="btn btn--outline-light">Ver tarifas</a>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO TRABAJAMOS -->
+<section class="section section--soft" id="como">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Cómo trabajamos</span>
+      <h2 class="h2">Tú te ocupas de pesar; nosotros, de digitalizarlo</h2>
+      <p class="lead">Un proceso claro en el que cada uno aporta lo que mejor sabe hacer.</p>
+    </div>
+    <div class="flow">
+      <div class="flowstep reveal">
+        <div class="flowstep__n">1</div>
+        <h3>Asesoramos</h3>
+        <p>Estudiamos tu operativa y, si necesitas báscula, te decimos cuál te conviene, con criterio técnico e independiente.</p>
+      </div>
+      <div class="flowstep reveal">
+        <div class="flowstep__n">2</div>
+        <h3>Diseñamos el proyecto</h3>
+        <p>Definimos la solución completa: báscula, automatización e integración con tu software.</p>
+      </div>
+      <div class="flowstep flowstep--partner reveal">
+        <div class="flowstep__n">3</div>
+        <h3>La monta el partner</h3>
+        <p>La instalación de la báscula la realiza nuestro instalador de confianza de tu zona.</p>
+        <span class="flowstep__tag">Partner de tu zona</span>
+      </div>
+      <div class="flowstep reveal">
+        <div class="flowstep__n">4</div>
+        <h3>Integramos y automatizamos</h3>
+        <p>Conectamos la báscula a nuestro software y montamos la automatización: tótem, matrículas, accesos y ERP.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOFTWARE -->
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <div class="split__media reveal reveal--left">
+        <img loading="lazy" decoding="async" src="img/fotos/home-software.jpg" alt="Dos camiones pesando sobre la báscula puente gestionados por el software Truck & Scales">
+      </div>
+      <div class="reveal reveal--right">
+        <span class="eyebrow">Nuestro software · Truck &amp; Scales</span>
+        <h2 class="h2">Gestión de pesada de camiones, en la nube</h2>
+        <p class="lead" style="margin:1.1rem 0 1.2rem">Peso automático, albarán digital, control de accesos e integración con tu ERP. Conectado a la báscula que ya tienes.</p>
+        <ul class="checklist">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Albarán digital automático, guardado en la nube.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Integración con SAP, Sage, Oracle, Transkal y API REST.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Compatible con básculas de camiones de cualquier marca.</span></li>
+        </ul>
+        <p class="ed__cta" style="margin-top:1.6rem"><a href="software.html" class="btn btn--primary">Ver el software <span class="arrow">→</span></a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUÉ OFRECEMOS -->
+<section class="section section--soft">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Todo alrededor de tu báscula de camiones</span>
+      <h2 class="h2">Software, automatización y asesoramiento</h2>
+      <p class="lead">Nos ocupamos de la parte digital del pesaje de camiones, de principio a fin.</p>
+    </div>
+    <div class="linegrid">
+      <div class="linecard reveal">
+        <div class="linecard__img"><img loading="lazy" decoding="async" src="img/fotos/home-dashboard.jpg" alt="Panel del software Truck & Scales en un monitor: básculas de entrada y salida, pesadas y control de accesos" style="object-position:center 42%"></div>
+        <div class="linecard__body">
+          <h3>Software y albarán digital</h3>
+          <p>Peso automático, albarán digital en la nube y datos volcados a tu ERP.</p>
+          <ul class="checklist">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Truck &amp; Scales Cloud desde 89 €/mes</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Integración con tu ERP</span></li>
+          </ul>
+          <a href="software.html" class="btn btn--ghost">Ver el software <span class="arrow">→</span></a>
+        </div>
+      </div>
+      <div class="linecard reveal d1">
+        <div class="linecard__img"><img loading="lazy" decoding="async" src="img/fotos/automatizacion-card.jpg" alt="Técnico instalando el armario de automatización con pantalla de una báscula de camiones" loading="lazy"></div>
+        <div class="linecard__body">
+          <h3>Automatización y tótems</h3>
+          <p>Tótem de autoservicio, lectura de matrículas, barreras y cámaras OCR.</p>
+          <ul class="checklist">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Tótem, OCR de matrículas y accesos</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Todo conectado al software</span></li>
+          </ul>
+          <a href="automatizacion.html" class="btn btn--ghost">Ver automatización <span class="arrow">→</span></a>
+        </div>
+      </div>
+      <div class="linecard reveal d2">
+        <div class="linecard__img"><img loading="lazy" decoding="async" src="img/fotos/partners-card.jpg" alt="Instaladores partner montando una báscula de camiones" loading="lazy"></div>
+        <div class="linecard__body">
+          <h3>Instaladores partner</h3>
+          <p>La báscula la monta nuestro instalador de confianza de tu zona; nosotros ponemos el software y la automatización.</p>
+          <ul class="checklist">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Red de instaladores por toda España</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Tú montas la báscula, nosotros lo digital</span></li>
+          </ul>
+          <a href="partners.html" class="btn btn--ghost">Ver partners <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="section">
+  <div class="wrap">
+    <div class="split split--rev">
+      <div class="split__media reveal reveal--right">
+        <img loading="lazy" decoding="async" src="img/fotos/partners-2.jpg" alt="Red de instaladores de básculas de camiones partner por toda España">
+      </div>
+      <div class="reveal reveal--left">
+        <span class="eyebrow">Partners</span>
+        <h2 class="h2">La báscula la monta el partner de tu zona</h2>
+        <p class="lead" style="margin:1.1rem 0 1.2rem">No competimos con quien instala básculas: colaboramos. Tenemos una red de instaladores de confianza por toda España que recomendamos a los clientes que asesoramos.</p>
+        <ul class="checklist">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Instaladores de confianza cerca de ti.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>¿Montas básculas? Hazte partner.</span></li>
+        </ul>
+        <p class="ed__cta" style="margin-top:1.6rem"><a href="partners.html" class="btn btn--primary">Ver partners <span class="arrow">→</span></a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VÍDEOS REALES -->
+<section class="vidband" aria-label="Vídeos de instalaciones reales">
+  <video class="vidband__v" muted loop playsinline preload="none"><source src="img/fotos/software-hero.mp4" type="video/mp4"></video>
+  <video class="vidband__v" muted loop playsinline preload="none"><source src="img/fotos/caso-portsur.mp4" type="video/mp4"></video>
+</section>
+
+<!-- SECTORES -->
+<section class="section section--soft">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Sectores</span><h2 class="h2">Dónde pesan con nosotros</h2></div>
+    <div class="sectorgrid">
+      <span class="sector reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 20l6-14 6 14M2 20h20M13 12h5l3 8"/></svg>Canteras y áridos</span>
+      <span class="sector reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V8l8-4 8 4v12"/><path d="M9 20v-5h6v5"/></svg>Hormigoneras</span>
+      <span class="sector reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M6 8s2-4 6-4 6 4 6 4M4 14s2-3 8-3 8 3 8 3"/></svg>Cooperativas agrícolas</span>
+      <span class="sector reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21V10l9-7 9 7v11z"/><path d="M9 21v-6h6v6"/></svg>Fábricas de pienso</span>
+      <span class="sector reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18l-2 14H5z"/><path d="M9 10v6M15 10v6"/></svg>Gestores de residuos</span>
+      <span class="sector reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 4l5 8-5 8M17 4l-5 8 5 8"/></svg>Plantas de reciclaje</span>
+      <span class="sector reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 4h13v11H1z"/><path d="M14 8h4l3 3v4h-7z"/><circle cx="5.5" cy="18" r="2"/><circle cx="18.5" cy="18" r="2"/></svg>Centros logísticos</span>
+      <span class="sector reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V8l7-4 7 4v13"/><path d="M12 4v17"/></svg>Puertos</span>
+      <span class="sector reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 8h8v8H8z"/></svg>Industria alimentaria</span>
+      <span class="sector reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3h6v6l4 10H5l4-10z"/></svg>Industria química</span>
+      <span class="sector reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 20h20M4 20V8l8-4v16M12 20V9l8 3v8"/></svg>Construcción</span>
+      <span class="sector reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 20l4-9 5 3 4-8 5 14z"/></svg>Explotaciones mineras</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="ctaband reveal">
+  <div class="wrap">
+    <h2 class="h2">¿Digitalizamos el pesaje de tus camiones?</h2>
+    <p>Cuéntanos cuántas básculas tienes y te enseñamos cómo funciona con tus equipos.</p>
+    <a href="contacto.html" class="btn btn--light" data-erp-contact>Solicitar una demo <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a href="index.html" class="brand"><img decoding="async" src="img/truck-and-scales-logo.png" alt="Truck & Scales" class="brand__logo"></a>
+        <p>Digital Application Solutions S.L. Software de gestión de pesada automática de camiones.</p>
+      </div>
+      <div><h4>Producto</h4><ul><li><a href="software.html">Software</a></li><li><a href="tarifas.html">Tarifas</a></li><li><a href="totems.html#con-impresora">Tótems</a></li><li><a href="automatizacion.html">Automatización</a></li></ul></div>
+      <div><h4>Empresa</h4><ul><li><a href="partners.html">Partners</a></li><li><a href="proyectos.html">Proyectos</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+      <div><h4>Contacto</h4><ul><li><a href="mailto:info@dastions.com">info@dastions.com</a></li><li><a href="tel:+34977131206">+34 977 13 12 06</a></li><li><a href="https://api.whatsapp.com/send?phone=34620717157" target="_blank" rel="noopener">WhatsApp</a></li><li>Tarragona, Cataluña, España</li></ul></div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Digital Application Solutions S.L. · Truck & Scales</span>
+      <span><a href="legal.html#aviso">Aviso legal</a> · <a href="legal.html#privacidad">Privacidad</a> · <a href="legal.html#cookies">Cookies</a></span>
+    </div>
+  </div>
+  <div class="footer__wm" aria-hidden="true">Scales</div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
 </html>
