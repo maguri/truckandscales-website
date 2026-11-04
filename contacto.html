@@ -68,9 +68,9 @@
       <div class="reveal" id="solicitar">
         <div class="formcard">
           <h2 class="h3" style="margin-bottom:1.4rem">Formulario de solicitud de presupuesto</h2>
-          <form id="presupuestoForm" method="POST" enctype="multipart/form-data" data-mailto="info@dastions.com">
+          <form id="presupuestoForm" data-mailto="info@dastions.com">
             <!-- Anti-spam (honeypot): rellenar este campo delata a los bots -->
-            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+            <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
 
             <div class="row2">
               <div class="field"><label for="nombre">Nombre y apellidos *</label><input id="nombre" name="nombre" type="text" required autocomplete="name"></div>
@@ -162,7 +162,7 @@
 
             <div class="field"><label for="comentarios">Comentarios</label><textarea id="comentarios" name="comentarios" rows="4" placeholder="Cuéntanos tu operativa, plazos, obra civil, vehículos especiales..."></textarea></div>
 
-            <p class="field" style="font-size:.86rem;color:var(--muted)">¿Tienes fotografías o planos? Adjúntalos en el correo que se abrirá al enviar la solicitud.</p>
+            <p class="field" style="font-size:.86rem;color:var(--muted)">¿Tienes fotografías o planos? Envíalos a <a href="mailto:info@dastions.com" style="color:var(--brand-dd);font-weight:600">info@dastions.com</a> indicando tu nombre, o adjúntalos cuando te respondamos.</p>
 
             <label class="check">
               <input type="checkbox" required>

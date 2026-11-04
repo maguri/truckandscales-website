@@ -274,6 +274,40 @@
   window.addEventListener('resize', onScroll);
 })();
 
+// Formularios de la web → backend de Truck & Scales (POST /api/leads/<ruta>), que avisa por email.
+// La URL base se puede cambiar con data-api-base en el <body>.
+var TS_API_BASE = (document.body.getAttribute('data-api-base') || 'https://api.truckandscales.com').replace(/\/$/, '');
+function enviarLead(ruta, datos) {
+  return fetch(TS_API_BASE + '/api/leads/' + ruta, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(datos),
+    keepalive: true
+  }).then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r; });
+}
+
+// Envía una solicitud de contacto. Si el API falla, abre el correo con los datos ya
+// redactados (como hacía antes la web) para no perder la solicitud.
+function enviarContacto(form, datos, mailto) {
+  var btn = form.querySelector('button[type="submit"]');
+  var txt = btn ? btn.innerHTML : '';
+  if (btn) { btn.disabled = true; btn.textContent = 'Enviando…'; }
+  return enviarLead('contacto', datos).then(function () {
+    var ok = document.createElement('div');
+    ok.className = 'form-ok';
+    ok.setAttribute('role', 'status');
+    ok.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.6 2.6L16 9.6"/></svg>' +
+      '<h2 class="h3">¡Solicitud enviada!</h2>' +
+      '<p>Gracias, ' + datos.nombre.replace(/[<>&"]/g, '') + '. Te responderemos lo antes posible.</p>';
+    form.style.display = 'none';
+    form.parentNode.insertBefore(ok, form.nextSibling);
+  }).catch(function () {
+    window.location.href = mailto;
+  }).then(function () {
+    if (btn) { btn.disabled = false; btn.innerHTML = txt; }
+  });
+}
+
 // Modales de contacto: formulario emergente encima de la página actual
 (function () {
   var closeSvg = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>';
@@ -296,6 +330,8 @@
   }
   function openModal(m, e) {
     if (e) e.preventDefault();
+    var ok = m.querySelector('.form-ok');
+    if (ok) { ok.parentNode.removeChild(ok); m.querySelector('form').reset(); m.querySelector('form').style.display = ''; }
     m.classList.add('is-open');
     document.body.classList.add('cmodal-open');
     var f = m.querySelector('input, select, textarea');
@@ -314,13 +350,14 @@
 
   var rgpd = '<label class="check"><input type="checkbox" required><span>' + L('He leído y acepto la política de privacidad y el tratamiento de mis datos para responder a esta solicitud.', 'I have read and accept the privacy policy and the processing of my data in order to respond to this request.') + '</span></label>';
   var mailNote = '<p style="font-size:.86rem;color:var(--muted);margin:1.1rem 0 0">' + L('¿Prefieres el correo? ', 'Prefer email? ') + '<a href="mailto:info@dastions.com" style="color:var(--brand-dd);font-weight:600">info@dastions.com</a></p>';
+  var trampa = '<input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">';
   var LB_NAME = L('Nombre *', 'Name *'), LB_COMP = L('Empresa', 'Company'), LB_TEL = L('Teléfono *', 'Phone *'), LB_MSG = L('Mensaje', 'Message'), LB_SEL = L('Selecciona', 'Select'), LB_SEND = L('Enviar solicitud', 'Send request'), LB_QUOTE = L('Solicitar presupuesto', 'Request a quote');
 
   // ---- Modal general ----
   var general = buildModal(L('Solicita tu presupuesto', 'Request your quote'),
     '<span class="eyebrow">' + L('Contacto', 'Contact') + '</span>' +
     '<h2 class="h3" style="margin:.3rem 0 1.3rem">' + L('Solicita tu presupuesto', 'Request your quote') + '</h2>' +
-    '<form action="https://formspree.io/f/[FORMSPREE_ID]" method="POST">' +
+    '<form>' + trampa +
       '<div class="row2">' +
         '<div class="field"><label for="cm-nombre">' + LB_NAME + '</label><input id="cm-nombre" name="nombre" type="text" required autocomplete="name"></div>' +
         '<div class="field"><label for="cm-empresa">' + LB_COMP + '</label><input id="cm-empresa" name="empresa" type="text" autocomplete="organization"></div>' +
@@ -343,7 +380,7 @@
     '<span class="eyebrow">' + L('Integración ERP', 'ERP integration') + '</span>' +
     '<h2 class="h3" style="margin:.3rem 0 .5rem">' + L('Conecta tu pesaje de camiones con tu ERP', 'Connect your truck weighing with your ERP') + '</h2>' +
     '<p style="color:var(--muted);font-size:.92rem;margin:0 0 1.3rem">' + L('Cuéntanos cómo pesas tus camiones y con qué ERP trabajas. Te preparamos una propuesta a medida.', 'Tell us how you weigh your trucks and which ERP you work with. We\'ll prepare a tailor-made proposal.') + '</p>' +
-    '<form action="https://formspree.io/f/[FORMSPREE_ID]" method="POST">' +
+    '<form>' + trampa +
       '<input type="hidden" name="asunto" value="' + L('Integración ERP', 'ERP integration') + '">' +
       '<div class="row2">' +
         '<div class="field"><label for="erp-nombre">' + LB_NAME + '</label><input id="erp-nombre" name="nombre" type="text" required autocomplete="name"></div>' +
@@ -369,7 +406,7 @@
     '<span class="eyebrow">' + L('Básculas puente · Montaje', 'Weighbridges · Installation') + '</span>' +
     '<h2 class="h3" style="margin:.3rem 0 .5rem">' + L('Presupuesto de báscula de camiones', 'Truck weighbridge quote') + '</h2>' +
     '<p style="color:var(--muted);font-size:.92rem;margin:0 0 1.3rem">' + L('Diseño, obra civil, montaje y puesta en marcha llave en mano. Cuéntanos cómo la quieres y te preparamos un presupuesto.', 'Turnkey design, civil works, installation and commissioning. Tell us how you want it and we\'ll prepare a quote.') + '</p>' +
-    '<form action="https://formspree.io/f/[FORMSPREE_ID]" method="POST">' +
+    '<form>' + trampa +
       '<input type="hidden" name="asunto" value="' + L('Báscula puente de camiones', 'Truck weighbridge') + '">' +
       '<div class="row2">' +
         '<div class="field"><label for="bas-nombre">' + LB_NAME + '</label><input id="bas-nombre" name="nombre" type="text" required autocomplete="name"></div>' +
@@ -409,7 +446,7 @@
     '<span class="eyebrow">' + L('Integración · Productos', 'Integration · Products') + '</span>' +
     '<h2 class="h3" style="margin:.3rem 0 .5rem">' + L('Presupuesto de integración para tu báscula', 'Integration quote for your weighbridge') + '</h2>' +
     '<p style="color:var(--muted);font-size:.92rem;margin:0 0 1.3rem">' + L('Añadimos tótems, cámaras, control de accesos y más sobre la báscula que ya tienes. Cuéntanos qué necesitas y te preparamos un presupuesto.', 'We add kiosks, cameras, access control and more to the weighbridge you already have. Tell us what you need and we\'ll prepare a quote.') + '</p>' +
-    '<form action="https://formspree.io/f/[FORMSPREE_ID]" method="POST">' +
+    '<form>' + trampa +
       '<input type="hidden" name="asunto" value="' + L('Integración sobre la báscula', 'Weighbridge integration') + '">' +
       '<div class="row2">' +
         '<div class="field"><label for="int-nombre">' + LB_NAME + '</label><input id="int-nombre" name="nombre" type="text" required autocomplete="name"></div>' +
@@ -449,8 +486,8 @@
     }
   });
 
-  // Los formularios de los modales se envían por correo (sin backend, no pueden fallar):
-  // arman un mailto a info@dastions.com con todos los datos ya rellenados.
+  // Los formularios de los modales se envían al API de leads con todos los datos etiquetados.
+  // Si el API falla, se abre un mailto a info@dastions.com con los mismos datos.
   function etiquetaDe(form, el) {
     if (el.id) { var l = form.querySelector('label[for="' + el.id + '"]'); if (l) return l.textContent.trim().replace(/\s*\*$/, ''); }
     return el.name;
@@ -461,31 +498,33 @@
     e.preventDefault();
     if (!form.checkValidity()) { form.reportValidity(); return; }
     var asuntoEl = form.querySelector('input[name="asunto"]');
-    var nombreEl = form.querySelector('input[name="nombre"]');
-    var asunto = 'Solicitud de presupuesto' +
-      (asuntoEl && asuntoEl.value ? ' - ' + asuntoEl.value : '') +
-      (nombreEl && nombreEl.value ? ' (' + nombreEl.value.trim() + ')' : '');
-    var lineas = [], marcados = [];
+    var nombre = form.elements.nombre.value.trim();
+    var tema = asuntoEl && asuntoEl.value ? asuntoEl.value : '';
+    var asunto = 'Solicitud de presupuesto' + (tema ? ' - ' + tema : '') + ' (' + nombre + ')';
+    var campos = [], marcados = [];
     [].slice.call(form.elements).forEach(function (el) {
-      if (!el.name || el.name === 'asunto' || el.type === 'submit' || el.type === 'button') return;
+      if (!el.name || el.name === 'asunto' || el.name === 'website' || el.type === 'submit' || el.type === 'button') return;
       if (el.type === 'checkbox') { if (el.checked && el.value) marcados.push(el.value); return; }
-      if (el.value && el.value.trim()) lineas.push(etiquetaDe(form, el) + ': ' + el.value.trim());
+      if (el.value && el.value.trim()) campos.push([etiquetaDe(form, el), el.value.trim()]);
     });
-    if (marcados.length) lineas.push('A integrar/automatizar: ' + marcados.join(', '));
-    var cuerpo = 'Hola, quiero solicitar un presupuesto:\n\n' + lineas.join('\n');
-    window.location.href = 'mailto:info@dastions.com' +
-      '?subject=' + encodeURIComponent(asunto) +
-      '&body=' + encodeURIComponent(cuerpo);
+    if (marcados.length) campos.push(['A integrar/automatizar', marcados.join(', ')]);
+    var cuerpo = 'Hola, quiero solicitar un presupuesto:\n\n' + campos.map(function (c) { return c[0] + ': ' + c[1]; }).join('\n');
+    enviarContacto(form, {
+      nombre: nombre,
+      email: form.elements.email.value.trim(),
+      asunto: tema,
+      campos: campos,
+      origen: location.href,
+      website: form.elements.website.value
+    }, 'mailto:info@dastions.com?subject=' + encodeURIComponent(asunto) + '&body=' + encodeURIComponent(cuerpo));
   });
 })();
 
 // Manual de usuario: pide el email antes de descargar el PDF.
-// El email se envía al backend de Truck & Scales (POST /api/leads/manual), que avisa por correo.
-// La URL se puede cambiar con data-lead-endpoint en el <body>. Si el envío falla, la descarga sigue.
+// El email se envía al API de leads (POST /api/leads/manual). Si el envío falla, la descarga sigue.
 (function () {
   var links = [].slice.call(document.querySelectorAll('[data-manual-download]'));
   if (!links.length) return;
-  var LEAD_ENDPOINT = document.body.getAttribute('data-lead-endpoint') || 'https://api.truckandscales.com/api/leads/manual';
   var STORE_KEY = 'ts-manual-email';
   var pdfUrl = links[0].getAttribute('href');
   var closeSvg = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>';
@@ -554,16 +593,11 @@
     if (!form.checkValidity()) { form.reportValidity(); return; }
     var email = form.elements.email.value.trim();
     guardar(email);
-    fetch(LEAD_ENDPOINT, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        email: email,
-        empresa: form.elements.empresa.value.trim(),
-        origen: location.href,
-        website: form.elements.website.value
-      }),
-      keepalive: true
+    enviarLead('manual', {
+      email: email,
+      empresa: form.elements.empresa.value.trim(),
+      origen: location.href,
+      website: form.elements.website.value
     }).catch(function () {});
     m.classList.add('is-done');
     descargar();
@@ -603,8 +637,8 @@
   });
 })();
 
-// Formulario de contacto: sin backend, redacta un correo a info@dastions.com
-// con todos los datos ya rellenados y abre el cliente de email del usuario.
+// Formulario de contacto: se envía al API de leads. Si el API falla, redacta un correo
+// a info@dastions.com con todos los datos ya rellenados y abre el cliente de email del usuario.
 (function () {
   var form = document.getElementById('presupuestoForm');
   if (!form) return;
@@ -619,19 +653,24 @@
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     if (!form.checkValidity()) { form.reportValidity(); return; }
-    var lineas = [];
+    var campos = [];
     Object.keys(etiquetas).forEach(function (k) {
       var el = form.elements[k];
       if (el && el.value && el.value.trim()) {
-        lineas.push(etiquetas[k] + ': ' + el.value.trim());
+        campos.push([etiquetas[k], el.value.trim()]);
       }
     });
-    var nombre = (form.elements['nombre'] && form.elements['nombre'].value.trim()) || '';
-    var asunto = 'Solicitud de presupuesto' + (nombre ? ' - ' + nombre : '');
-    var cuerpo = 'Hola, quiero solicitar un presupuesto:\n\n' + lineas.join('\n') +
+    var nombre = form.elements['nombre'].value.trim();
+    var asunto = 'Solicitud de presupuesto - ' + nombre;
+    var cuerpo = 'Hola, quiero solicitar un presupuesto:\n\n' + campos.map(function (c) { return c[0] + ': ' + c[1]; }).join('\n') +
       '\n\n(Si tienes fotografías o planos, adjúntalos a este correo antes de enviarlo.)';
-    window.location.href = 'mailto:' + dest +
-      '?subject=' + encodeURIComponent(asunto) +
-      '&body=' + encodeURIComponent(cuerpo);
+    enviarContacto(form, {
+      nombre: nombre,
+      email: form.elements['email'].value.trim(),
+      asunto: 'Formulario de contacto',
+      campos: campos,
+      origen: location.href,
+      website: form.elements['website'].value
+    }, 'mailto:' + dest + '?subject=' + encodeURIComponent(asunto) + '&body=' + encodeURIComponent(cuerpo));
   });
 })();
