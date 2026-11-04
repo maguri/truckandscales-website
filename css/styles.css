@@ -1054,3 +1054,9 @@ body.cmodal-open{overflow:hidden}
   .shot img{box-shadow:none}
   .js .reveal{opacity:1!important;transform:none!important}
 }
+
+/* Mensaje tras enviar un formulario de contacto */
+.form-ok{text-align:center;padding:12px 0}
+.form-ok svg{width:54px;height:54px;color:var(--brand-dd);margin:0 auto .8rem}
+.form-ok .h3{margin:0 0 .5rem}
+.form-ok p{color:var(--muted);margin:0}
