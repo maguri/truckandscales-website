@@ -457,7 +457,7 @@
   }
   document.addEventListener('submit', function (e) {
     var form = e.target;
-    if (!(form instanceof HTMLFormElement) || !form.closest('.cmodal')) return;
+    if (!(form instanceof HTMLFormElement) || !form.closest('.cmodal') || form.hasAttribute('data-manual-form')) return;
     e.preventDefault();
     if (!form.checkValidity()) { form.reportValidity(); return; }
     var asuntoEl = form.querySelector('input[name="asunto"]');
@@ -476,6 +476,97 @@
     window.location.href = 'mailto:info@dastions.com' +
       '?subject=' + encodeURIComponent(asunto) +
       '&body=' + encodeURIComponent(cuerpo);
+  });
+})();
+
+// Manual de usuario: pide el email antes de descargar el PDF.
+// El email se envía al backend de Truck & Scales (POST /api/leads/manual), que avisa por correo.
+// La URL se puede cambiar con data-lead-endpoint en el <body>. Si el envío falla, la descarga sigue.
+(function () {
+  var links = [].slice.call(document.querySelectorAll('[data-manual-download]'));
+  if (!links.length) return;
+  var LEAD_ENDPOINT = document.body.getAttribute('data-lead-endpoint') || 'https://api.truckandscales.com/api/leads/manual';
+  var STORE_KEY = 'ts-manual-email';
+  var pdfUrl = links[0].getAttribute('href');
+  var closeSvg = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+  var okSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.6 2.6L16 9.6"/></svg>';
+
+  function guardado() { try { return localStorage.getItem(STORE_KEY) || ''; } catch (e) { return ''; } }
+  function guardar(v) { try { localStorage.setItem(STORE_KEY, v); } catch (e) {} }
+  function descargar() {
+    var a = document.createElement('a');
+    a.href = pdfUrl;
+    a.download = pdfUrl.split('/').pop();
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+
+  var m = document.createElement('div');
+  m.className = 'cmodal cmodal--manual';
+  m.setAttribute('role', 'dialog');
+  m.setAttribute('aria-modal', 'true');
+  m.setAttribute('aria-label', 'Descargar el manual de usuario');
+  m.innerHTML =
+    '<div class="cmodal__backdrop" data-cm-close></div>' +
+    '<div class="cmodal__card">' +
+      '<button class="cmodal__close" type="button" aria-label="Cerrar" data-cm-close>' + closeSvg + '</button>' +
+      '<form data-manual-form novalidate>' +
+        '<span class="eyebrow">Manual de usuario · PDF</span>' +
+        '<h2 class="h3" style="margin:.3rem 0 .5rem">Descarga el manual de Truck &amp; Scales</h2>' +
+        '<p style="color:var(--muted);font-size:.92rem;margin:0 0 1.3rem">Indícanos tu email para descargar el manual. Te avisaremos cuando haya una versión nueva.</p>' +
+        '<div class="field"><label for="mdl-email">Email *</label><input id="mdl-email" name="email" type="email" required autocomplete="email" placeholder="nombre@empresa.com"></div>' +
+        '<div class="field"><label for="mdl-empresa">Empresa</label><input id="mdl-empresa" name="empresa" type="text" autocomplete="organization"></div>' +
+        '<input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">' +
+        '<label class="check"><input type="checkbox" name="privacidad" required><span>He leído y acepto la <a href="legal.html#privacidad" target="_blank" style="color:var(--brand-dd);font-weight:600">política de privacidad</a> y el tratamiento de mis datos para enviarme información sobre Truck &amp; Scales.</span></label>' +
+        '<button type="submit" class="btn btn--primary" style="width:100%;justify-content:center">Descargar manual <span class="arrow">→</span></button>' +
+      '</form>' +
+      '<div class="mdl__ok">' + okSvg +
+        '<h2 class="h3" style="margin:0 0 .5rem">¡Gracias!</h2>' +
+        '<p style="color:var(--muted);margin:0 0 1.2rem">La descarga empezará en unos segundos. Si no empieza, pulsa el botón.</p>' +
+        '<a class="btn btn--primary" href="' + pdfUrl + '" download>Descargar de nuevo <span class="arrow">→</span></a>' +
+      '</div>' +
+    '</div>';
+  document.body.appendChild(m);
+
+  var form = m.querySelector('form');
+  function cerrar() { m.classList.remove('is-open'); document.body.classList.remove('cmodal-open'); }
+  function abrir() {
+    m.classList.remove('is-done');
+    form.elements.email.value = guardado();
+    m.classList.add('is-open');
+    document.body.classList.add('cmodal-open');
+    setTimeout(function () { form.elements.email.focus(); }, 80);
+  }
+  m.addEventListener('click', function (e) { if (e.target.closest('[data-cm-close]')) cerrar(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') cerrar(); });
+
+  links.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (guardado()) { descargar(); return; } // ya dejó su email en este navegador
+      abrir();
+    });
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    var email = form.elements.email.value.trim();
+    guardar(email);
+    fetch(LEAD_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: email,
+        empresa: form.elements.empresa.value.trim(),
+        origen: location.href,
+        website: form.elements.website.value
+      }),
+      keepalive: true
+    }).catch(function () {});
+    m.classList.add('is-done');
+    descargar();
   });
 })();
 

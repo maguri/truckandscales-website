@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manual de usuario | Truck & Scales</title>
+<meta name="description" content="Manual de usuario de Truck & Scales con capturas de pantalla: aplicación web de pesaje (autorizaciones, movimientos, vehículos, albaranes) y tótem de autoservicio para conductores.">
+<meta name="theme-color" content="#2e3a50">
+<link rel="icon" type="image/png" href="favicon.png?v=5">
+<link rel="canonical" href="https://www.dastions.com/basculas/manual">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Manual de usuario | Truck & Scales">
+<meta property="og:description" content="Guía paso a paso, con capturas, de la aplicación web y del tótem de autoservicio de Truck & Scales.">
+<meta property="og:locale" content="es_ES">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500;600;700;800;900&family=Public+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="index.html" class="brand" aria-label="Truck & Scales - Inicio"><img decoding="async" src="img/truck-and-scales-logo.png" alt="Truck & Scales" class="brand__logo"></a>
+    <nav class="nav__links" aria-label="Principal">
+      <a href="index.html">Inicio</a>
+      <div class="navitem navitem--drop">
+        <button class="navitem__top is-current" type="button" data-href="software.html" aria-haspopup="true" aria-expanded="false">Software <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="navdrop">
+          <a href="software.html">El software</a>
+          <a href="automatizacion.html">Automatización</a>
+          <a href="manual.html">Manual de usuario</a>
+        </div>
+      </div>
+      <a href="tarifas.html">Tarifas</a>
+      <div class="navitem navitem--drop">
+        <button class="navitem__top" type="button" aria-haspopup="true" aria-expanded="false">Productos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="navdrop">
+          <a href="totems.html#con-impresora">Tótem con impresora</a>
+          <a href="totems.html#sin-impresora">100% digital (sin tótem)</a>
+          <a href="totems.html#con-pantalla">Tótem con pantalla</a>
+          <a href="totems.html#monedero">Monedero</a>
+          <a href="totems.html#control-accesos">Control de accesos y matrículas</a>
+        </div>
+      </div>
+      <a href="partners.html">Partners</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="contacto.html" class="btn btn--primary nav__cta" data-erp-contact>Presupuesto <span class="arrow">→</span></a>
+    </nav>
+    <button class="nav__toggle" aria-label="Menú" aria-expanded="false"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+  </div>
+</header>
+
+<section class="phero phero--clean">
+  <div class="phero__bg"><img decoding="async" src="img/fotos/home-software.jpg" alt=""></div>
+  <div class="wrap phero__inner">
+    <span class="eyebrow eyebrow--light">Manual de usuario</span>
+    <h1 class="h1">Cómo usar Truck &amp; Scales, paso a paso</h1>
+    <p class="lead">Guía con capturas de pantalla de la aplicación web de pesaje y del tótem de autoservicio. Consúltala online o descárgala en PDF.</p>
+    <div class="hero__cta">
+      <a href="docs/manual-usuario-truck-and-scales.pdf" class="btn btn--primary" data-manual-download>Descargar manual (PDF) <span class="arrow">→</span></a>
+      <a href="#indice" class="btn btn--outline-light">Ver índice</a>
+    </div>
+  </div>
+</section>
+
+<section class="section manualwrap" id="indice">
+  <div class="wrap">
+    <div class="legal manual">
+      <div class="legal__main legal__doc manual__doc">
+
+        <!-- INTRODUCCIÓN -->
+        <section id="introduccion" class="manual__sec">
+          <span class="eyebrow">Introducción</span>
+          <h2 class="h2">Antes de empezar</h2>
+          <p>Truck &amp; Scales registra cada pesada de camión, genera el albarán digital y controla qué vehículos pueden entrar en la báscula. El sistema tiene dos partes, y este manual explica las dos:</p>
+          <div class="manual__parts">
+            <a href="#web-acceso" class="manual__part">
+              <b>Aplicación web</b>
+              <span>Para la oficina: autorizaciones, movimientos, vehículos, clientes y albaranes. Se usa desde el navegador del ordenador.</span>
+            </a>
+            <a href="#totem" class="manual__part">
+              <b>Tótem de autoservicio</b>
+              <span>Para el conductor: pantalla táctil junto a la báscula para identificarse, pesar y recoger el ticket o el albarán.</span>
+            </a>
+          </div>
+          <p>Las capturas usan datos de ejemplo. Según los equipos instalados en tu báscula y tu usuario, puede que no veas todas las opciones.</p>
+          <h3>Conceptos básicos</h3>
+          <ul class="manual__glossary">
+            <li><strong>Pesada:</strong> una lectura de peso de un camión en la báscula, con fecha, hora y matrícula.</li>
+            <li><strong>Movimiento:</strong> la pareja de pesadas de entrada y de salida de un mismo camión. De ellas sale el peso neto y el albarán.</li>
+            <li><strong>Autorización:</strong> el permiso (pedido u orden) que dice qué producto, cliente, transportista y zona corresponden a una operación, y qué matrículas pueden usarla.</li>
+            <li><strong>Vehículo autorizado:</strong> una matrícula dada de alta y asociada a una autorización. El tótem solo deja pasar matrículas autorizadas, o las esporádicas si hay una tarifa general.</li>
+            <li><strong>Albarán:</strong> el documento final del movimiento, con pesos de entrada, salida y neto. Se puede imprimir, descargar en PDF o enviar por email.</li>
+          </ul>
+        </section>
+
+        <!-- PARTE 1: WEB -->
+        <div class="manual__partlabel">Parte 1 · Aplicación web</div>
+
+        <section id="web-acceso" class="manual__sec">
+          <h2 class="h2">1. Acceso a la aplicación</h2>
+          <p>Abre la dirección de la aplicación que te ha facilitado tu empresa en un navegador actualizado (Chrome, Edge, Firefox o Safari).</p>
+          <ol class="manual__steps">
+            <li>Escribe tu <strong>correo electrónico</strong> y tu <strong>contraseña</strong>.</li>
+            <li>Pulsa <strong>Entrar</strong>.</li>
+            <li>Si no recuerdas la contraseña, pulsa <strong>Recuperar cuenta</strong>.</li>
+          </ol>
+          <figure class="shot"><img loading="lazy" src="img/manual/web-01-login.webp" alt="Pantalla de inicio de sesión de Truck & Scales con los campos de correo electrónico y contraseña" width="1440" height="900"><figcaption>Pantalla de inicio de sesión.</figcaption></figure>
+          <h3>Menú principal</h3>
+          <p>Después de entrar verás el menú superior. Cada pestaña abre una sección de este manual:</p>
+          <ul>
+            <li><a href="#web-dashboard">Dashboard</a> · <a href="#web-autorizaciones">Autorizaciones</a> · <a href="#web-movimientos">Movimientos</a> · <a href="#web-vehiculos">Vehículos</a></li>
+            <li><a href="#web-maestros">Zonas, Clientes / Proveedores, Transportistas y Productos</a> · <a href="#web-bloqueadas">Personas Bloqueadas</a> · <a href="#web-cuenta">Mi cuenta</a></li>
+          </ul>
+        </section>
+
+        <section id="web-dashboard" class="manual__sec">
+          <h2 class="h2">2. Dashboard</h2>
+          <p>Es la pantalla de inicio y muestra lo que pasa en la báscula en este momento. Si tienes varias básculas, elige cuál ver en <strong>Vista báscula</strong>, arriba a la derecha.</p>
+
+          <h3>Resumen</h3>
+          <p>La tarjeta amarilla muestra el <strong>peso actual</strong> de la báscula y la <strong>última matrícula leída</strong>, en tiempo real. Debajo aparecen las pesadas que todavía no están asignadas a un movimiento.</p>
+          <figure class="shot"><img loading="lazy" src="img/manual/web-02-dashboard.webp" alt="Dashboard con el peso en tiempo real de la báscula y la lista de pesadas sin asignar" width="1440" height="900"><figcaption>Resumen: peso en tiempo real y pesadas pendientes.</figcaption></figure>
+
+          <h3>Pesadas sin asignar</h3>
+          <p>Aquí aparecen las pesadas que el sistema no ha podido asociar a una autorización, por ejemplo un camión sin matrícula autorizada. En cada fila:</p>
+          <ul>
+            <li><span class="manual__key manual__key--red">✕</span> descarta la pesada.</li>
+            <li>El icono de cámara muestra la foto tomada en el momento de pesar, si existe.</li>
+            <li><span class="manual__key manual__key--blue">→</span> abre la pesada para asignarla a una autorización.</li>
+            <li>El buscador <strong>Matrícula</strong> filtra la lista.</li>
+          </ul>
+          <figure class="shot"><img loading="lazy" src="img/manual/web-03-pesadas-sin-asignar.webp" alt="Pestaña de pesadas sin asignar con una pesada pendiente" width="1440" height="900"><figcaption>Pesadas pendientes de asignar.</figcaption></figure>
+          <p>Al pulsar la flecha, elige la autorización en <strong>Código Autorización</strong>, revisa la matrícula y los pesos y pulsa <strong>Aceptar</strong>. La pesada pasa a formar parte de un movimiento.</p>
+          <figure class="shot"><img loading="lazy" src="img/manual/web-03b-asignar-pesada.webp" alt="Ventana para asignar una pesada a una autorización" width="1440" height="900"><figcaption>Asignar una pesada a una autorización.</figcaption></figure>
+          <p>El botón <span class="manual__key manual__key--blue">+</span> junto al título crea una pesada con el peso actual de la báscula. Escribe o busca la matrícula, comprueba la fecha y el peso y pulsa <strong>Crear y Vincular</strong>.</p>
+          <figure class="shot"><img loading="lazy" src="img/manual/web-03c-crear-pesada.webp" alt="Ventana para crear una pesada con el peso actual de la báscula" width="1440" height="900"><figcaption>Crear una pesada desde la oficina.</figcaption></figure>
+
+          <h3>Control de Accesos</h3>
+          <p>Muestra cuántas <strong>matrículas autorizadas</strong> hay y cuántos <strong>vehículos están dentro</strong> de la planta. La tabla indica quién está dentro, su DNI/NIF, la matrícula, el producto y el tipo de operación.</p>
+          <figure class="shot"><img loading="lazy" src="img/manual/web-04-control-accesos.webp" alt="Control de accesos con los vehículos que están en planta" width="1440" height="900"><figcaption>Vehículos en planta.</figcaption></figure>
+
+          <h3>Acceso Manual</h3>
+          <p>Si la lectura automática de una matrícula falla, desde aquí puedes introducirla a mano para dar paso al camión. Cada botón corresponde a un punto de acceso (entrada o salida), y a la derecha ves la última matrícula que ha leído cada cámara.</p>
+          <figure class="shot"><img loading="lazy" src="img/manual/web-05-acceso-manual.webp" alt="Acceso manual con los botones de cada acceso y la última lectura de matrícula" width="1440" height="900"><figcaption>Acceso manual.</figcaption></figure>
+        </section>
+
+        <section id="web-autorizaciones" class="manual__sec">
+          <h2 class="h2">3. Autorizaciones</h2>
+          <p>Una autorización es el pedido u orden de trabajo que permite pesar. Indica el producto, el cliente, el transportista, la zona y las matrículas que pueden usarla.</p>
+          <ul>
+            <li><strong>Activas / Todas / Generales:</strong> filtran la lista. Las <em>generales</em> son tarifas para clientes esporádicos que se ofrecen en el tótem.</li>
+            <li><strong>Buscar por referencia:</strong> localiza un pedido por su número.</li>
+            <li>El icono de impresora descarga la autorización en PDF, y el lápiz la abre para editarla.</li>
+          </ul>
+          <figure class="shot"><img loading="lazy" src="img/manual/web-06-autorizaciones.webp" alt="Listado de autorizaciones con referencia, zona, cliente, empresa y tipo" width="1440" height="900"><figcaption>Listado de autorizaciones.</figcaption></figure>
+          <h3>Crear o editar una autorización</h3>
+          <p>Pulsa <strong>Crear autorización</strong> o el lápiz de una fila. Los campos marcados con (*) son obligatorios:</p>
+          <ul>
+            <li><strong>Tipo de autorización:</strong> Carga, Descarga, Rueda o Libre.</li>
+            <li><strong>No. Pedido</strong> y, si hace falta, <strong>N. Contenedor</strong>.</li>
+            <li><strong>Cupo:</strong> los kilos totales permitidos. Verás lo consumido y lo disponible, y puedes sumar o restar kilos con <em>Ajustar disponible</em>.</li>
+            <li><strong>Producto</strong>, <strong>Zona / Silo</strong>, <strong>Cliente / Proveedor</strong> y <strong>Transportista</strong>.</li>
+            <li><strong>Precio (céntimos/kg)</strong> e IVA, solo si se cobra por peso. Si lo dejas vacío, no se cobra.</li>
+            <li><strong>Matrículas</strong> que pueden usar la autorización.</li>
+          </ul>
+          <figure class="shot"><img loading="lazy" src="img/manual/web-07-autorizacion-editar.webp" alt="Formulario de edición de una autorización" width="1440" height="900"><figcaption>Edición de una autorización.</figcaption></figure>
+          <p class="manual__note"><b>Importante:</b> si cambias una autorización en uso, los vehículos asociados también se ven afectados. Revisa los datos antes de guardar.</p>
+        </section>
+
+        <section id="web-movimientos" class="manual__sec">
+          <h2 class="h2">4. Movimientos y albaranes</h2>
+          <p>Cada fila es un movimiento: la entrada y la salida de un camión, con sus pesos y el neto. Es la sección que más vas a consultar.</p>
+          <ul>
+            <li><strong>Todos / Carga / Descarga / Rueda:</strong> filtran por tipo de operación.</li>
+            <li><strong>Fechas:</strong> elige el periodo con los dos calendarios. La ✕ roja borra el filtro.</li>
+            <li><strong>Buscar por matrícula</strong> y el número de filas por página.</li>
+            <li><strong>Exportar CSV:</strong> descarga los movimientos del periodo para abrirlos en Excel.</li>
+            <li>El icono de impresora descarga el <strong>albarán en PDF</strong>. Si marcas varias casillas, los albaranes se descargan juntos en un ZIP.</li>
+          </ul>
+          <figure class="shot"><img loading="lazy" src="img/manual/web-08-movimientos.webp" alt="Listado de movimientos con pesos de entrada, salida y neto" width="1440" height="900"><figcaption>Listado de movimientos.</figcaption></figure>
+          <h3>Editar un movimiento</h3>
+          <p>Pulsa el lápiz para abrir el panel lateral, que tiene cuatro pestañas:</p>
+          <ul>
+            <li><strong>Ticket Data:</strong> datos que salen en el albarán (referencia, remolque, producto, zona, cliente, proveedor, transportista y observaciones). Los campos vacíos se rellenan con los datos de la autorización.</li>
+            <li><strong>Weight Form:</strong> corrección manual de pesos. Úsala solo cuando sea imprescindible, porque el cambio queda bajo tu responsabilidad.</li>
+            <li><strong>Send Mail:</strong> envía el albarán por email al cliente o al transportista.</li>
+            <li><strong>Images:</strong> fotos del camión tomadas en la báscula.</li>
+          </ul>
+          <figure class="shot"><img loading="lazy" src="img/manual/web-09-movimiento-editar.webp" alt="Panel de edición de un movimiento con las pestañas Ticket Data, Weight Form, Send Mail e Images" width="1440" height="900"><figcaption>Datos del albarán de un movimiento.</figcaption></figure>
+          <p>Pulsa <strong>Guardar</strong> para aplicar los cambios o <strong>Cancelar</strong> para salir sin guardar.</p>
+        </section>
+
+        <section id="web-vehiculos" class="manual__sec">
+          <h2 class="h2">5. Vehículos</h2>
+          <p>Aquí están las matrículas que pueden acceder a la báscula. Las pestañas muestran los vehículos <strong>Autorizados</strong>, los que están <strong>En Planta</strong> o <strong>Todos</strong>. La columna <em>Estado</em> indica si el camión está dentro (IN) o fuera (OUT).</p>
+          <figure class="shot"><img loading="lazy" src="img/manual/web-10-vehiculos.webp" alt="Listado de vehículos autorizados" width="1440" height="900"><figcaption>Vehículos autorizados.</figcaption></figure>
+          <p>Con <strong>Crear Vehículo</strong> o el lápiz puedes indicar la matrícula y el remolque, el conductor y su NIF, la tara, las fechas de validez y la autorización asociada. La impresora descarga la tarjeta del vehículo en PDF.</p>
+          <p><strong>Forzar Entrada / Forzar Salida</strong> corrige el estado de un camión que ha entrado o salido sin pasar por la báscula.</p>
+          <figure class="shot"><img loading="lazy" src="img/manual/web-11-vehiculo-editar.webp" alt="Ventana de edición de un vehículo con conductor, NIF, tara y autorización" width="1440" height="900"><figcaption>Edición de un vehículo.</figcaption></figure>
+        </section>
+
+        <section id="web-maestros" class="manual__sec">
+          <h2 class="h2">6. Zonas, clientes, transportistas y productos</h2>
+          <p>Son las listas que se eligen al crear autorizaciones y albaranes. Todas funcionan igual: un buscador, un botón <strong>Crear</strong> arriba a la derecha y el lápiz para editar cada registro.</p>
+          <h3>Zonas</h3>
+          <p>Zonas de la planta (canteras, acopios, silos, muelles…) con código, nombre y descripción.</p>
+          <figure class="shot"><img loading="lazy" src="img/manual/web-12-zonas.webp" alt="Listado de zonas" width="1440" height="900"><figcaption>Zonas.</figcaption></figure>
+          <h3>Clientes / Proveedores</h3>
+          <p>Nombre, CIF/NIF, email, observaciones y dirección. El email se usa para enviar los albaranes.</p>
+          <figure class="shot"><img loading="lazy" src="img/manual/web-13-clientes.webp" alt="Listado de clientes y proveedores" width="1440" height="900"><figcaption>Clientes y proveedores.</figcaption></figure>
+          <figure class="shot"><img loading="lazy" src="img/manual/web-14-cliente-editar.webp" alt="Ventana de edición de un cliente" width="1440" height="900"><figcaption>Ficha de un cliente.</figcaption></figure>
+          <h3>Transportistas</h3>
+          <p>Empresas o autónomos que transportan la carga, con sus datos fiscales y de contacto.</p>
+          <figure class="shot"><img loading="lazy" src="img/manual/web-15-transportistas.webp" alt="Listado de transportistas" width="1440" height="900"><figcaption>Transportistas.</figcaption></figure>
+          <h3>Productos</h3>
+          <p>Materiales que se cargan o descargan, con código, nombre y observaciones.</p>
+          <figure class="shot"><img loading="lazy" src="img/manual/web-16-productos.webp" alt="Listado de productos" width="1440" height="900"><figcaption>Productos.</figcaption></figure>
+        </section>
+
+        <section id="web-bloqueadas" class="manual__sec">
+          <h2 class="h2">7. Personas bloqueadas</h2>
+          <p>Lista de conductores que no pueden acceder, identificados por su NIF. Si un conductor bloqueado intenta entrar, el sistema avisa y no le deja pasar.</p>
+          <ul>
+            <li><strong>Crear Persona:</strong> da de alta a una persona con nombre y NIF y márcala como bloqueada.</li>
+            <li>Para desbloquearla, abre su ficha con el lápiz y quita el bloqueo.</li>
+          </ul>
+          <figure class="shot"><img loading="lazy" src="img/manual/web-17-personas-bloqueadas.webp" alt="Listado de personas bloqueadas" width="1440" height="900"><figcaption>Personas bloqueadas.</figcaption></figure>
+        </section>
+
+        <section id="web-cuenta" class="manual__sec">
+          <h2 class="h2">8. Mi cuenta</h2>
+          <p>Desde <strong>Mi cuenta</strong>, a la derecha del menú, puedes abrir tu <strong>Perfil de usuario</strong> o <strong>cerrar la sesión</strong>.</p>
+          <figure class="shot"><img loading="lazy" src="img/manual/web-18-menu-cuenta.webp" alt="Menú desplegable Mi cuenta" width="1440" height="900"><figcaption>Menú de la cuenta.</figcaption></figure>
+          <p>En el perfil puedes cambiar tu nombre y tu PIN, cambiar tu contraseña y revisar los datos de tu empresa.</p>
+          <figure class="shot"><img loading="lazy" src="img/manual/web-19-perfil.webp" alt="Perfil de usuario con datos personales y cambio de contraseña" width="1440" height="900"><figcaption>Perfil de usuario.</figcaption></figure>
+          <p class="manual__note"><b>Seguridad:</b> no compartas tu usuario y cierra la sesión si usas un ordenador compartido.</p>
+        </section>
+
+        <!-- PARTE 2: TÓTEM -->
+        <div class="manual__partlabel">Parte 2 · Tótem de autoservicio</div>
+
+        <section id="totem" class="manual__sec">
+          <h2 class="h2">9. Pesar con el tótem (conductores)</h2>
+          <p>El tótem es la pantalla táctil junto a la báscula. Guía al conductor en cinco pasos, que se ven siempre en la parte superior: <strong>Matrícula → Acceso → Pesada → Pago → Listo</strong>.</p>
+
+          <h3>Paso 1 · Subir a la báscula</h3>
+          <p>Sube el camión a la báscula y detenlo por completo. Si la pantalla está en espera, tócala o pulsa <strong>Leer matrícula</strong>.</p>
+          <figure class="shot shot--kiosk"><img loading="lazy" src="img/manual/kiosk-01-espera.webp" alt="Tótem en espera de vehículo" width="1280" height="800"><figcaption>Tótem en espera.</figcaption></figure>
+
+          <h3>Paso 2 · Revisar la matrícula</h3>
+          <p>El sistema lee la matrícula automáticamente. Comprueba que es correcta y pulsa <strong>Confirmar</strong>.</p>
+          <figure class="shot shot--kiosk"><img loading="lazy" src="img/manual/kiosk-02-confirmar-matricula.webp" alt="Tótem mostrando la matrícula leída y el peso, con los botones Cancelar y Confirmar" width="1280" height="800"><figcaption>Confirmar la matrícula.</figcaption></figure>
+          <p>Si no es correcta, toca la matrícula para abrir el teclado, corrígela y pulsa <strong>Listo</strong>.</p>
+          <figure class="shot shot--kiosk"><img loading="lazy" src="img/manual/kiosk-02b-teclado-matricula.webp" alt="Teclado en pantalla para corregir la matrícula" width="1280" height="1000"><figcaption>Corregir la matrícula con el teclado.</figcaption></figure>
+
+          <h3>Paso 3 · Acceso</h3>
+          <p>El sistema comprueba que la matrícula está autorizada. Si no lo está pero hay tarifas para clientes esporádicos, el tótem pide elegir el <strong>producto</strong> que se va a cargar. Elige uno y pulsa <strong>Continuar</strong>.</p>
+          <figure class="shot shot--kiosk"><img loading="lazy" src="img/manual/kiosk-03-producto.webp" alt="Selección de producto en el tótem" width="1280" height="800"><figcaption>Selección de producto (clientes esporádicos).</figcaption></figure>
+
+          <h3>Paso 4 · Pesada</h3>
+          <p>Espera sin mover el camión mientras se registra el peso.</p>
+          <figure class="shot shot--kiosk"><img loading="lazy" src="img/manual/kiosk-04-pesando.webp" alt="Tótem registrando la pesada" width="1280" height="800"><figcaption>Camión autorizado, registrando el peso.</figcaption></figure>
+          <p><strong>En la entrada</strong>, el tótem ofrece imprimir el <strong>ticket de báscula</strong>. Después, dirígete a la zona de carga o descarga.</p>
+          <figure class="shot shot--kiosk"><img loading="lazy" src="img/manual/kiosk-05-entrada-ticket.webp" alt="Pregunta para imprimir el ticket de entrada" width="1280" height="800"><figcaption>Ticket de entrada.</figcaption></figure>
+
+          <h3>Paso 5 · Pago (si corresponde)</h3>
+          <p><strong>En la salida</strong>, si la operación tiene precio, la pantalla muestra el importe. Paga con tarjeta en el TPV junto al tótem.</p>
+          <figure class="shot shot--kiosk"><img loading="lazy" src="img/manual/kiosk-06-pago.webp" alt="Pantalla de pago en el TPV con el importe" width="1280" height="800"><figcaption>Pago en el TPV.</figcaption></figure>
+
+          <h3>Paso 6 · Albarán</h3>
+          <p>Al terminar la salida, recibes el albarán de una de estas formas, según cómo esté preparada tu báscula:</p>
+          <div class="manual__grid">
+            <figure class="shot shot--kiosk"><img loading="lazy" src="img/manual/kiosk-07-albaran-imprimir.webp" alt="Pregunta para imprimir el albarán" width="1280" height="800"><figcaption><b>Impreso:</b> pulsa Imprimir.</figcaption></figure>
+            <figure class="shot shot--kiosk"><img loading="lazy" src="img/manual/kiosk-09-albaran-qr.webp" alt="Código QR para consultar el albarán electrónico" width="1280" height="800"><figcaption><b>QR:</b> escanéalo con el móvil.</figcaption></figure>
+          </div>
+          <p><strong>Por email:</strong> pulsa <strong>Sí</strong>, escribe tu correo con el teclado en pantalla y pulsa <strong>Enviar</strong>.</p>
+          <div class="manual__grid">
+            <figure class="shot shot--kiosk"><img loading="lazy" src="img/manual/kiosk-08-albaran-email.webp" alt="Pregunta para recibir el albarán electrónico por email" width="1280" height="800"><figcaption>¿Desea recibir albarán electrónico?</figcaption></figure>
+            <figure class="shot shot--kiosk"><img loading="lazy" src="img/manual/kiosk-08b-teclado-email.webp" alt="Teclado en pantalla para escribir el correo electrónico" width="1280" height="1000"><figcaption>Escribir el correo.</figcaption></figure>
+          </div>
+
+          <h3>Paso 7 · Salir de la báscula</h3>
+          <p>Cuando la pantalla indique <strong>Puede abandonar la báscula</strong>, baja de la báscula. El tótem vuelve solo al estado de espera.</p>
+          <figure class="shot shot--kiosk"><img loading="lazy" src="img/manual/kiosk-10-fin.webp" alt="Mensaje final: puede abandonar la báscula" width="1280" height="800"><figcaption>Proceso terminado.</figcaption></figure>
+
+          <h3>Si aparece un error</h3>
+          <p>Si la matrícula no está autorizada o hay algún problema, la pantalla lo indica en rojo. Pulsa <strong>Reintentar</strong> o <strong>Cancelar</strong> y, si el problema continúa, avisa a la oficina.</p>
+          <figure class="shot shot--kiosk"><img loading="lazy" src="img/manual/kiosk-11-error.webp" alt="Mensaje de error: matrícula no autorizada" width="1280" height="800"><figcaption>Aviso de matrícula no autorizada.</figcaption></figure>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="manual__sec">
+          <h2 class="h2">10. Preguntas frecuentes</h2>
+          <h3>Un camión ha pesado pero no aparece en Movimientos</h3>
+          <p>Mira en <a href="#web-dashboard">Dashboard → Pesadas sin asignar</a>. Si la matrícula no tenía autorización, la pesada queda ahí hasta que la asignes.</p>
+          <h3>¿Cómo envío otra vez un albarán al cliente?</h3>
+          <p>En <a href="#web-movimientos">Movimientos</a>, abre el movimiento con el lápiz y usa la pestaña <strong>Send Mail</strong>.</p>
+          <h3>¿Cómo saco un listado para facturar?</h3>
+          <p>En <a href="#web-movimientos">Movimientos</a>, elige las fechas y pulsa <strong>Exportar CSV</strong>.</p>
+          <h3>Un camión figura dentro de la planta pero ya se ha ido</h3>
+          <p>Abre el vehículo en <a href="#web-vehiculos">Vehículos</a> y pulsa <strong>Forzar Salida</strong>.</p>
+          <h3>El tótem no reconoce la matrícula</h3>
+          <p>El conductor puede corregirla con el teclado en pantalla. Desde la oficina también se puede introducir en <a href="#web-dashboard">Dashboard → Acceso Manual</a>.</p>
+        </section>
+
+        <div class="manual__download">
+          <div>
+            <b>¿Lo prefieres en PDF?</b>
+            <span>Descarga el manual completo para consultarlo sin conexión o imprimirlo.</span>
+          </div>
+          <a href="docs/manual-usuario-truck-and-scales.pdf" class="btn btn--primary" data-manual-download>Descargar manual <span class="arrow">→</span></a>
+        </div>
+      </div>
+
+      <aside class="legal__side manual__side" aria-label="Índice del manual">
+        <h4>Índice</h4>
+        <nav>
+          <a href="#introduccion">Antes de empezar</a>
+          <a href="#web-acceso">1. Acceso</a>
+          <a href="#web-dashboard">2. Dashboard</a>
+          <a href="#web-autorizaciones">3. Autorizaciones</a>
+          <a href="#web-movimientos">4. Movimientos y albaranes</a>
+          <a href="#web-vehiculos">5. Vehículos</a>
+          <a href="#web-maestros">6. Zonas, clientes y productos</a>
+          <a href="#web-bloqueadas">7. Personas bloqueadas</a>
+          <a href="#web-cuenta">8. Mi cuenta</a>
+          <a href="#totem">9. Tótem de autoservicio</a>
+          <a href="#faq">10. Preguntas frecuentes</a>
+        </nav>
+        <a href="docs/manual-usuario-truck-and-scales.pdf" class="btn btn--primary manual__sidebtn" data-manual-download>Descargar PDF</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="ctaband reveal">
+  <div class="wrap">
+    <h2 class="h2">¿Tienes dudas con la aplicación?</h2>
+    <p>Nuestro equipo de soporte te ayuda con cualquier paso de este manual.</p>
+    <a href="mailto:support@dastions.com" class="btn btn--light">Contactar con soporte <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a href="index.html" class="brand"><img decoding="async" src="img/truck-and-scales-logo.png" alt="Truck & Scales" class="brand__logo"></a>
+        <p>Digital Application Solutions S.L. Software de gestión de pesada automática de camiones.</p>
+      </div>
+      <div><h4>Producto</h4><ul><li><a href="software.html">Software</a></li><li><a href="tarifas.html">Tarifas</a></li><li><a href="totems.html#con-impresora">Tótems</a></li><li><a href="automatizacion.html">Automatización</a></li><li><a href="manual.html">Manual de usuario</a></li></ul></div>
+      <div><h4>Empresa</h4><ul><li><a href="partners.html">Partners</a></li><li><a href="proyectos.html">Proyectos</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+      <div><h4>Contacto</h4><ul><li><a href="mailto:info@dastions.com">info@dastions.com</a></li><li><a href="tel:+34977131206">+34 977 13 12 06</a></li><li><a href="https://api.whatsapp.com/send?phone=34620717157" target="_blank" rel="noopener">WhatsApp</a></li><li>Tarragona, Cataluña, España</li></ul></div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Digital Application Solutions S.L. · Truck & Scales</span>
+      <span><a href="legal.html#aviso">Aviso legal</a> · <a href="legal.html#privacidad">Privacidad</a> · <a href="legal.html#cookies">Cookies</a></span>
+    </div>
+  </div>
+  <div class="footer__wm" aria-hidden="true">Scales</div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
