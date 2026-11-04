@@ -1001,3 +1001,56 @@ body.cmodal-open{overflow:hidden}
 .erpshots,
 .svc,
 #control-accesos .split__media img{border-radius:8px}
+
+/* Manual de usuario (reutiliza la maqueta de las paginas legales) */
+.manualwrap{padding-top:clamp(50px,6vw,80px)}
+.manual__doc{min-width:0}
+.manual__sec{scroll-margin-top:100px;padding-bottom:clamp(26px,3vw,40px);margin-bottom:clamp(26px,3vw,40px);border-bottom:1px solid var(--line)}
+.manual__sec .h2{font-size:clamp(1.6rem,3vw,2.2rem);margin:0 0 1rem}
+.manual__doc ol{color:var(--muted);line-height:1.7;margin:0 0 1.3rem;padding-left:1.4rem}
+.manual__doc ol li{margin-bottom:.45rem}
+.manual__partlabel{display:inline-block;font-family:var(--head);font-weight:800;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--ink);border-radius:999px;padding:.45rem 1rem;margin:.6rem 0 1.6rem}
+.manual__parts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:1.2rem 0 1.4rem}
+.manual__part{display:block;padding:18px 20px;border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:var(--radius);background:var(--soft);transition:border-color .18s,transform .18s}
+.manual__part:hover{border-color:var(--brand);transform:translateY(-2px)}
+.manual__doc .manual__part b{display:block;font-family:var(--head);font-size:1.08rem;color:var(--ink);margin-bottom:.3rem}
+.manual__part span{display:block;color:var(--muted);font-size:.93rem;line-height:1.55;font-weight:400}
+.manual__doc a.manual__part{word-break:normal}
+.manual__glossary li{margin-bottom:.7rem}
+.shot{margin:1.3rem 0 1.8rem}
+.shot img{display:block;width:100%;height:auto;border-radius:var(--radius);border:1px solid var(--line);box-shadow:var(--shadow-sm);background:#0b1220}
+.shot--kiosk img{background:#eef4fa}
+.shot figcaption{font-size:.86rem;color:var(--muted);margin-top:.6rem;text-align:center}
+.shot figcaption b{color:var(--ink)}
+.manual__grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.manual__grid .shot{margin:1rem 0 1.4rem}
+.manual__key{display:inline-grid;place-items:center;min-width:1.6em;height:1.6em;border-radius:6px;font-weight:700;font-size:.9rem;background:var(--soft);border:1px solid var(--line)}
+.manual__key--red{color:#d33}
+.manual__key--blue{color:#3366ff}
+.manual__note{padding:14px 18px;border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:var(--radius);background:#fffaf2;color:var(--text)!important}
+.manual__download{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:22px 24px;border-radius:var(--radius-lg);background:var(--soft);border:1px solid var(--line)}
+.manual__download b{display:block;font-family:var(--head);font-size:1.15rem;color:var(--ink)}
+.manual__download span{color:var(--muted);font-size:.94rem}
+.manual__sidebtn{margin-top:1.2rem;width:100%;justify-content:center}
+.legal__side a.manual__sidebtn{color:#fff;border-bottom:0;padding:.75rem 1rem}
+@media(max-width:860px){.manual__sidebtn{display:none}}
+@media(max-width:640px){.manual__parts,.manual__grid{grid-template-columns:1fr}}
+
+/* Modal de descarga del manual (pide el email antes de descargar) */
+.cmodal--manual .cmodal__card{max-width:520px}
+.mdl__ok{display:none;text-align:center}
+.cmodal--manual.is-done form{display:none}
+.cmodal--manual.is-done .mdl__ok{display:block}
+.mdl__ok svg{width:54px;height:54px;color:var(--brand-dd);margin:0 auto .8rem}
+
+/* Version imprimible (se usa tambien para generar el PDF) */
+@media print{
+  .site-header,.phero,.ctaband,.footer,.manual__side,.manual__download,.cmodal{display:none!important}
+  .manualwrap{padding:0}
+  .legal{display:block}
+  .manual__sec{break-inside:auto;border-bottom:0}
+  .manual__sec .h2{break-after:avoid}
+  .shot{break-inside:avoid}
+  .shot img{box-shadow:none}
+  .js .reveal{opacity:1!important;transform:none!important}
+}
